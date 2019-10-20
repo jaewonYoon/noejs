@@ -15,17 +15,10 @@ exports.postAddProduct = (req,res,next) => {
 
 exports.getProducts = (req,res,next) => {
     Product.fetchAll(products => {
-        res.render('shop/product-list',{
+        res.render('admin/products',{
             prods:products,
-            pageTitle: 'Shop',
-            path: '/',
-            hasProducts: products.length > 0,
-            activeShop: true,
-            productCss: true
+            pageTitle: 'Admin',
+            path: '/admin/products',
         })
-    })
-    // view engine으로 pug설정을 했기 때문에 shop.pug
-    // 가 아니라 shop이라고만 적어도 된다.  
-    
-}; 
-
+    });
+}
