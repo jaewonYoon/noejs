@@ -1,9 +1,9 @@
-extends ../layouts/main-layout.pug
-
+extends ../includes/header.pug
 block styles
     link(rel="stylesheet", href="/css/forms.css")
-    link(rel="stylesheet", href="/css/shop.css")
-block content
+    link(rel="stylesheet", href="/css/product.css")
+block contents
+    include ../includes/navigation.pug
     main
         if prods.length >0
             .grid
@@ -17,7 +17,7 @@ block content
                             h2.product__price $19.99
                             p.product__description A very interesting book about so many even more interest thing.
                         .card__actions
-                            button.btn Add to cart
+                            include ../includes/add-to-cart.pug
         else 
             h1 No Products 
 
